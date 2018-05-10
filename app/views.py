@@ -1,18 +1,19 @@
 # views.py
 
-from app import app
+from app import application
 from flask import render_template
 import json
  
-@app.route('/')
+@application.route('/')
+@application.route('/index.html')
 def index():
     return render_template("index.html")
 
-@app.route('/about')
+@application.route('/about')
 def about():
     return render_template("about.html")
 
-@app.route('/data')
+@application.route('/data')
 def get_data():
     
     obj = {
