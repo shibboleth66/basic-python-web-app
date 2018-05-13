@@ -1,7 +1,7 @@
 # views.py
 
 from app import application
-from flask import render_template
+from flask import render_template, request
 import json
  
 @application.route('/')
@@ -13,14 +13,7 @@ def index():
 def about():
     return render_template("about.html")
 
-@application.route('/data')
-def get_data():
-    
-    obj = {
-        "test_data" : [
-            "hello",
-            "there"
-        ]
-    }
-
-    return json.dumps(obj)
+@application.route('/details')
+def details():
+    import os
+    return render_template("details.html", list=os.environ)

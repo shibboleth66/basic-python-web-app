@@ -11,4 +11,5 @@ if __name__ != "__main__":
     application.logger.setLevel(gunicorn_logger.level)
 
 if __name__ == "__main__":
+
     application.run()

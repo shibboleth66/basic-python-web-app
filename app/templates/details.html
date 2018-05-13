@@ -1,0 +1,38 @@
+<!-- info.html-->
+
+{% extends "base.html" %}
+
+{% block title %}Details{% endblock %}
+
+{% block body %}
+
+<!-- Jumbotron Banner -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Export of Environment Variables</h1> 
+    <p>os.environ passed as list to jinja template</p> 
+  </div>
+</div>
+
+<div class="container">
+  <h2>Environment Variables</h2>
+  <p>Informartion extracted from python os.environ</p> 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in list %}
+        <tr>
+        <td>{{ item }}</td>
+        <td>{{ list[item] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
