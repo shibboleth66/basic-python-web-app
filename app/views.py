@@ -1,9 +1,9 @@
 # views.py
 
+# import json
 from app import application
 from flask import render_template, request
-import json
- 
+
 @application.route('/')
 @application.route('/index.html')
 def index():
